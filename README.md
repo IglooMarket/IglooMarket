@@ -262,7 +262,126 @@ CMD(커맨드 창) → `ipconfig` → 무선 LAN 어댑터 로컬 영역 연결*
 
 ---
 
-## 정규표현식 SQL문
+## 정규표현식 SQL문 문제
+### 1번) 가격이 특정 가격인 상품을 찾아서 가격 인상 또는 인하하세요.
+**(UPDATE, 정규표현식)**
+<details>
+  <summary><b>답안</b></summary>
+UPDATE products
+SET price = REGEXP_REPLACE(price, '50000', '70000')
+WHERE price REGEXP '^50000$';
+</details>
+<br>
+
+### 2번) 쿨하지 못한 '네고'라는 말을 사용하는 유저가 있는 채팅방 아이디를 찾으세요.
+**(SELECT, 정규표현식)**
+<details>
+  <summary><b>답안</b></summary>
+SELECT room_id FROM messages 
+WHERE content REGEXP '네고';
+</details>
+<br>
+
+### 3번) '네고' 라는 단어를 필터링해 '쿨거래'로 변경하세요.
+**저희는 채팅 메시지에 네고라는 단어를 쓰면 후에 필터링을 통해 쿨거래로 바꿔드립니다.**<br>
+**(UPDATE, 정규표현식)**
+<br><br>
+**'네고'라는 단어를 포함한 메시지 내용 출력하세요.**
+<details>
+  <summary><b>답안</b></summary>
+SELECT content
+FROM messages
+WHERE content REGEXP '네고';
+</details>
+
+**정규 표현식을 이용해 '네고'라는 단어를 '쿨거래'로 바꿔서 업데이트 하세요.**
+<details>
+  <summary><b>답안</b></summary>
+UPDATE messages
+SET content = REGEXP_REPLACE(content, '네고', '쿨거래')
+WHERE content REGEXP '네고';
+</details>
+
+**'네고'라는 단어를 포함한 메시지 내용이 남아 있는지 출력하세요.**
+<details>
+  <summary><b>답안</b></summary>
+SELECT content
+FROM messages
+WHERE content REGEXP '네고';
+</details>
+<br>
+
+### 4번) 형식을 지키지 않은 전화번호를 형식에 맞게 변경하세요.
+**[-]가 없이 이어서 작성한 전화번호를 정해진 전화번호 형식으로 변경하세요.**<br>
+**전화번호 형식: 010-0000-0000**<br>
+**(UPDATE, 정규표현식)**
+<br><br>
+**정해진 형식이 아닌 전화번호를 가진 유저 정보를 모두 출력하세요.**
+<details>
+  <summary><b>답안</b></summary>
+SELECT *
+FROM users
+WHERE phone_number NOT REGEXP '^010-[0-9]{4}-[0-9]{4}$';
+</details>
+
+**정규 표현식을 이용해 -가 없이 이어서 작성한 전화번호를 정해진 형식으로 바꿔서 업데이트 하세요.**
+<details>
+  <summary><b>답안</b></summary>
+UPDATE users
+SET phone_number = CONCAT(SUBSTRING(phone_number, 1, 3), '-', SUBSTRING(phone_number, 4, 4), '-', SUBSTRING(phone_number, 8, 4))
+WHERE phone_number REGEXP '^010[0-9]{8}$';
+</details>
+
+**정해진 형식이 아닌 전화번호를 가진 유저 정보가 남아있는지 출력해 확인하세요.**
+<details>
+  <summary><b>답안</b></summary>
+SELECT *
+FROM users
+WHERE phone_number NOT REGEXP '^010-[0-9]{4}-[0-9]{4}$';
+</details>
+<br>
+
+### 5번) gmail을 사용하는 유저 이름을 모두 조회하세요.
+**(SELECT, 정규표현식)**
+<br><br>
+<details>
+  <summary><b>답안</b></summary>
+SELECT *
+FROM users
+WHERE email REGEXP '^[a-zA-Z0-9._%+-]+@gmail.com$';
+</details>
+<br>
+
+### 6번) 변경된 비밀번호 정책을 만족하는 비밀번호를 가진 유저를 모두 조회하세요.
+**변경된 비밀번호 정책을 만족하는 비밀번호를 가진 유저를 모두 조회하려고 합니다.**<br>
+**비밀번호를 정해진 형식에 맞게 필터링해서 조회하세요.**<br>
+**[비밀번호 형식]**<br>
+**1. 대문자 반드시 하나이상 포함**<br>
+**2. 특수문자(!@#$%^&*) 반드시 하나이상 포함**<br>
+**3. 비밀번호 길이가 8글자 이상 16글자 이하**<br>
+**(SELECT, 정규표현식)**
+<br><br>
+<details>
+  <summary><b>답안</b></summary>
+SELECT *
+FROM users
+WHERE pwd REGEXP '[A-Z]'                
+  AND pwd REGEXP '[!@#$%^&*]'           
+  AND LENGTH(pwd) BETWEEN 8 AND 16;
+</details>
+<br>
+
+### 7번) 전화번호가 010 로 시작하지 않는 사람이 있습니다. 이 사람들의 앞자리 번호를 010으로 시작하도록 수정하세요
+**(ex. 014-9876-1222 → 010-9929-1693)**<br>
+**참고사항: 019, 014 등 여러개가 존재합니다 한문장으로 바꿔보세요.**<br>
+**(UPDATE, 정규표현식)**
+<br><br>
+<details>
+  <summary><b>답안</b></summary>
+UPDATE users
+SET phone_number = REGEXP_REPLACE(phone_number, substr(phone_number, 1,3), '010')
+WHERE phone_number not REGEXP '^010';
+</details>
 
 ---
 
