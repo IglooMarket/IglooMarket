@@ -267,9 +267,12 @@ CMD(커맨드 창) → `ipconfig` → 무선 LAN 어댑터 로컬 영역 연결*
 **(UPDATE, 정규표현식)**
 <details>
   <summary><b>답안</b></summary>
+ 
+```sql
 UPDATE products
 SET price = REGEXP_REPLACE(price, '50000', '70000')
 WHERE price REGEXP '^50000$';
+```
 </details>
 <br>
 
@@ -277,8 +280,11 @@ WHERE price REGEXP '^50000$';
 **(SELECT, 정규표현식)**
 <details>
   <summary><b>답안</b></summary>
+ 
+```sql
 SELECT room_id FROM messages 
 WHERE content REGEXP '네고';
+```
 </details>
 <br>
 
@@ -289,25 +295,34 @@ WHERE content REGEXP '네고';
 **'네고'라는 단어를 포함한 메시지 내용 출력하세요.**
 <details>
   <summary><b>답안</b></summary>
+
+```sql
 SELECT content
 FROM messages
 WHERE content REGEXP '네고';
+```
 </details>
 
 **정규 표현식을 이용해 '네고'라는 단어를 '쿨거래'로 바꿔서 업데이트 하세요.**
 <details>
   <summary><b>답안</b></summary>
+ 
+```sql
 UPDATE messages
 SET content = REGEXP_REPLACE(content, '네고', '쿨거래')
 WHERE content REGEXP '네고';
+```
 </details>
 
 **'네고'라는 단어를 포함한 메시지 내용이 남아 있는지 출력하세요.**
 <details>
   <summary><b>답안</b></summary>
+
+```sql
 SELECT content
 FROM messages
 WHERE content REGEXP '네고';
+```
 </details>
 <br>
 
@@ -319,25 +334,34 @@ WHERE content REGEXP '네고';
 **정해진 형식이 아닌 전화번호를 가진 유저 정보를 모두 출력하세요.**
 <details>
   <summary><b>답안</b></summary>
+
+```sql
 SELECT *
 FROM users
 WHERE phone_number NOT REGEXP '^010-[0-9]{4}-[0-9]{4}$';
+```
 </details>
 
 **정규 표현식을 이용해 -가 없이 이어서 작성한 전화번호를 정해진 형식으로 바꿔서 업데이트 하세요.**
 <details>
   <summary><b>답안</b></summary>
+
+```sql
 UPDATE users
 SET phone_number = CONCAT(SUBSTRING(phone_number, 1, 3), '-', SUBSTRING(phone_number, 4, 4), '-', SUBSTRING(phone_number, 8, 4))
 WHERE phone_number REGEXP '^010[0-9]{8}$';
+```
 </details>
 
 **정해진 형식이 아닌 전화번호를 가진 유저 정보가 남아있는지 출력해 확인하세요.**
 <details>
   <summary><b>답안</b></summary>
+
+```sql
 SELECT *
 FROM users
 WHERE phone_number NOT REGEXP '^010-[0-9]{4}-[0-9]{4}$';
+```
 </details>
 <br>
 
@@ -346,9 +370,12 @@ WHERE phone_number NOT REGEXP '^010-[0-9]{4}-[0-9]{4}$';
 <br><br>
 <details>
   <summary><b>답안</b></summary>
+
+```sql
 SELECT *
 FROM users
 WHERE email REGEXP '^[a-zA-Z0-9._%+-]+@gmail.com$';
+```
 </details>
 <br>
 
@@ -363,11 +390,14 @@ WHERE email REGEXP '^[a-zA-Z0-9._%+-]+@gmail.com$';
 <br><br>
 <details>
   <summary><b>답안</b></summary>
+
+```sql
 SELECT *
 FROM users
 WHERE pwd REGEXP '[A-Z]'                
   AND pwd REGEXP '[!@#$%^&*]'           
   AND LENGTH(pwd) BETWEEN 8 AND 16;
+```
 </details>
 <br>
 
@@ -378,10 +408,15 @@ WHERE pwd REGEXP '[A-Z]'
 <br><br>
 <details>
   <summary><b>답안</b></summary>
+
+```sql
 UPDATE users
 SET phone_number = REGEXP_REPLACE(phone_number, substr(phone_number, 1,3), '010')
 WHERE phone_number not REGEXP '^010';
+```
 </details>
+
+<br>
 
 ---
 
