@@ -1,10 +1,10 @@
-# IglooMarket
+# ❄️ IglooMarket
 
-## 프로젝트 소개
+## 🐿️ 프로젝트 소개
  RDBMS를 활용한 정규표현식 SQL문장 개발하는 프로젝트입니다.
 
 ---
-## 팀소개
+## 🙌 팀소개
 <table>
   <tbody>
     <tr>
@@ -41,7 +41,7 @@
 </table>
 
 
-## 기술 stack
+## 🧿 기술 stack
 ![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white)
 ![DBeaver](https://img.shields.io/badge/dbeaver-FFD700.svg?style=for-the-badge&logo=dbeaver&logoColor=white)
 ![Notion](https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white)
@@ -50,7 +50,7 @@
 
 ---
 
-## DB 네트워크 구축
+## 🌐 DB 네트워크 구축
 1. mysql의 bind-address 설정 
     
     ```bash
@@ -202,7 +202,7 @@ CMD(커맨드 창) → `ipconfig` → 무선 LAN 어댑터 로컬 영역 연결*
 
 ---
 
-## 데이터설계
+## ⚙️ 데이터설계
 
 ### ERD
 ![sdasdawd](https://github.com/user-attachments/assets/5552ba80-90b6-4f98-83c5-13a36a94d28b)
@@ -262,7 +262,7 @@ CMD(커맨드 창) → `ipconfig` → 무선 LAN 어댑터 로컬 영역 연결*
 
 ---
 
-## 정규표현식 SQL문 문제
+## ⁉️ 정규표현식 SQL문 문제
 ### 1번) 가격이 특정 가격인 상품을 찾아서 가격 인상 또는 인하하세요.
 **(UPDATE, 정규표현식)**
 <details>
@@ -400,7 +400,7 @@ WHERE pwd REGEXP '[A-Z]'
 <br>
 
 ### 7번) 전화번호가 010 로 시작하지 않는 사람이 있습니다. 이 사람들의 앞자리 번호를 010으로 시작하도록 수정하세요
-**(ex. 014-9876-1222 → 010-9929-1693)**<br>
+**(ex. 014-9876-1222 → 010-9876-1222)**<br>
 **참고사항: 019, 014 등 여러개가 존재합니다 한문장으로 바꿔보세요.**<br>
 **(UPDATE, 정규표현식)**
 <details>
@@ -417,4 +417,6 @@ WHERE phone_number not REGEXP '^010';
 
 ---
 
-## 느낀점
+## 🎨 느낀점
+- 유호준 : 평소에 협업 개발을 진행할 때는 데이터베이스를 AWS에서 공용으로 사용하곤 했었는데 이번 기회에 핫스팟을 이용해 같은 ip로 공용 데이터베이스를 만들어보는 연습을 해보며 네트워크에 대해 공부도 되어 뜻 깊었습니다.
+  또한 sql문을 알고 있었으나 정규표현식을 들어보기만 하고 사용할 기회가 없었는데 이번에 문제를 내려고 공부하게 되고 사용법을 알게 되어서 얻어가는 것이 많은 프로젝트라고 생각합니다.  
