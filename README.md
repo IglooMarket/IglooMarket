@@ -39,15 +39,14 @@
     </tr>
   </tbody>
 </table>
----
+
 
 ## 기술 stack
-- mysql
-- Dbeaver
-- git
-- notion
-- discord
-- slack
+![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white)
+![DBeaver](https://img.shields.io/badge/dbeaver-FFD700.svg?style=for-the-badge&logo=dbeaver&logoColor=white)
+![Notion](https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white)
+![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white)
+![Slack](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white)
 
 ---
 
@@ -103,91 +102,162 @@ GRANT ALL PRIVILEGES ON igloo.* TO 'kcgy04'@'%';
 flush privileges;
 ```
 
-## 네트워크 설정
 
-### 호스트PC 모바일 핫스팟 설정하기
+<details>
+<summary> 1. 호스트PC 모바일 핫스팟 설정하기 </summary>
 
 ![image](https://github.com/user-attachments/assets/7f44f95b-9e74-4205-85b2-b9183a9e07d9)
 
+</details>
 
-### 게스트PC 와이파이 접속하기
+
+
+<details>
+<summary> 2. 게스트PC 와이파이 접속하기</summary>
 
 ![image](https://github.com/user-attachments/assets/a0c18162-a2b0-4767-b7c0-9efdea0c558f)
 
+</details>
 
-### HostPC에서 접속 pc확인
+
+
+<details>
+<summary> 3. HostPC에서 접속 PC 확인</summary>
 
 ![image](https://github.com/user-attachments/assets/fde44f1d-8479-4c01-b10a-25f60e292186)
 
+</details>
 
-### 호스트PC 방화벽 설정하기
 
-제어판 > 시스템 및 보안 > Windows Defender 방화벽 > 고급 설정 
 
-1  번
+<details>
+<summary> 4. 호스트PC 방화벽 설정하기</summary>
 
+**제어판 > 시스템 및 보안 > Windows Defender 방화벽 > 고급 설정**
+
+1번  
 ![image](https://github.com/user-attachments/assets/d93edb02-25bc-4fcd-9309-04db87a691eb)
 
-
-2  번
-
+2번  
 ![image](https://github.com/user-attachments/assets/5c844350-9e16-45f9-8e1f-a0735fb31b8b)
 
+이후 모두 디폴트 값으로 진행하여 **3306 포트에 대한 인바운드 규칙**을 설정합니다.
 
-이후 모두 디폴트 값으로 진행하여 3306 포트에 대한 인바운드 규칙을 설정합니다.
-
-### 게스트PC 방화벽 설정하기
-
-제어판 > 시스템 및 보안 > Windows Defender 방화벽 > 고급 설정 > 아웃바운드 규칙 > 새규칙 > 포트(O) > TCP(T), 특정 원격 포트(S) 3306 > 연결 허용
-
-![image](https://github.com/user-attachments/assets/2b126ae9-d6e9-43a1-a040-aba1cde1a558)
-
-![image](https://github.com/user-attachments/assets/7600a5c2-e965-4ac0-b36d-391e5e726c49)
-
-![image](https://github.com/user-attachments/assets/fc068620-a9f4-41d2-8bf1-0e4868e25d07)
-
-![image](https://github.com/user-attachments/assets/95e6cbf3-8b82-4a09-aea3-f8a75bbdd456)
-
-![image](https://github.com/user-attachments/assets/dda5f6b8-667f-489e-8f44-4ad3aef28fe0)
-
-![image](https://github.com/user-attachments/assets/e7b1ea1b-e532-479f-89f2-2e6b2b4029bc)
+</details>
 
 
 
-### Host PC의 IP주소 확인 하기
+<details>
+<summary> 5. 게스트PC 방화벽 설정하기</summary>
 
-CMD(커맨드 창) → ipconfig → 무선 LAN 어댑터 로컬 영역 연결* 2 → IPv4 주소(192.168.137.1)
+**제어판 > 시스템 및 보안 > Windows Defender 방화벽 > 고급 설정 > 아웃바운드 규칙 > 새 규칙 > 포트(O) > TCP(T), 특정 원격 포트(S) 3306 > 연결 허용**
 
-### Oracle VirtualBox 설정
+![image](https://github.com/user-attachments/assets/2b126ae9-d6e9-43a1-a040-aba1cde1a558)  
+![image](https://github.com/user-attachments/assets/7600a5c2-e965-4ac0-b36d-391e5e726c49)  
+![image](https://github.com/user-attachments/assets/fc068620-a9f4-41d2-8bf1-0e4868e25d07)  
+![image](https://github.com/user-attachments/assets/95e6cbf3-8b82-4a09-aea3-f8a75bbdd456)  
+![image](https://github.com/user-attachments/assets/dda5f6b8-667f-489e-8f44-4ad3aef28fe0)  
+![image](https://github.com/user-attachments/assets/e7b1ea1b-e532-479f-89f2-2e6b2b4029bc)  
 
-네트워크 → 포트포워딩 → 포트포워딩 규칙 추가
+</details>
+
+
+
+<details>
+<summary> 6. Host PC의 IP주소 확인하기</summary>
+
+CMD(커맨드 창) → `ipconfig` → 무선 LAN 어댑터 로컬 영역 연결* 2 → **IPv4 주소 (예: 192.168.137.1)**
+
+</details>
+
+
+
+<details>
+<summary> 7. Oracle VirtualBox 설정</summary>
+
+**네트워크 → 포트포워딩 → 포트포워딩 규칙 추가**
 
 ![image](https://github.com/user-attachments/assets/c8032422-fad8-41a8-a615-46f3e35ae5f2)
 
+</details>
 
-### Connection 만들기
 
-![image](https://github.com/user-attachments/assets/de4688b5-ee91-442e-9bbe-0f4d63cc82ce)
 
-Server Host : 호스트PC 의 IP주소  ex) 192.168.137.1
+<details>
+<summary> 8. Connection 만들기</summary>
 
-Database: 연결할 DB ex) igloo
+1. **Server Host**: 호스트PC의 IP주소 (예: `192.168.137.1`)  
+2. **Database**: 연결할 DB 이름 (예: `igloo`)  
+3. **Username**: 사용자 계정 (예: `kcgy02`)  
+4. **Password**: 비밀번호  
 
-Username: 사용자 계정 ex) kcgy02
-
-Password: 비밀번호
-
-![image](https://github.com/user-attachments/assets/d6a1f7db-e177-42b2-8716-8f3627f09749)
-
-![image](https://github.com/user-attachments/assets/c1d95753-60b5-41de-9752-9465e5e819ef)
-
+![image](https://github.com/user-attachments/assets/de4688b5-ee91-442e-9bbe-0f4d63cc82ce)  
+![image](https://github.com/user-attachments/assets/d6a1f7db-e177-42b2-8716-8f3627f09749)  
+![image](https://github.com/user-attachments/assets/c1d95753-60b5-41de-9752-9465e5e819ef)  
 ![image](https://github.com/user-attachments/assets/f5034688-2130-4076-9ca5-b2b41287136f)
+
+</details> 
+
+
 
 ---
 
 ## 데이터설계
 
-### DDL, DML, ERD
+### ERD
+![sdasdawd](https://github.com/user-attachments/assets/5552ba80-90b6-4f98-83c5-13a36a94d28b)
+
+### DDL
+
+---
+
+### **1. 테이블: `users`**
+
+| **변수명**      | **데이터 타입**        | **설명**                                                                                 |
+|----------------|----------------------|-------------------------------------------------------------------------------------|
+| `user_id`      | int auto_increment  | 사용자 고유 ID (자동 증가). 기본 키                                                      |
+| `email`        | varchar(50)         | 사용자의 이메일 주소                                                  |
+| `pwd`          | varchar(50)         | 사용자의 비밀번호                                                             |
+| `phone_number` | varchar(50)         | 사용자의 전화번호                                                           |
+| `name`         | varchar(50)         | 사용자의 이름                                                               |
+
+---
+
+### **2. 테이블: `products`**
+
+| **변수명**        | **데이터 타입**        | **설명**                                                                                 |
+|------------------|----------------------|-------------------------------------------------------------------------------------|
+| `product_id`     | int auto_increment  | 상품 고유 ID (자동 증가). 기본 키                                                          |
+| `owner_id`       | int                 | 상품 소유자 ID. `users` 테이블의 `user_id`와 연결된 외래 키                                  |
+| `product_name`   | varchar(50)         | 상품 이름                                                                |
+| `price`          | int                 | 상품 가격                                                               |
+| `status`         | varchar(50)         | 상품 상태 (예: 판매 중, 판매 완료 등)                                               |
+| `datetime`       | date                | 상품 등록 날짜를 저장                                                               |
+| `description`    | text                | 상품에 대한 상세 설명을 저장                                                         |
+
+---
+
+### **3. 테이블: `messages`**
+
+| **변수명**       | **데이터 타입** | **설명**                                                                                  |
+|-----------------|---------------|--------------------------------------------------------------------------------------|
+| `room_id`      | int           | 채팅방 고유 ID. `chatrooms` 테이블의 `room_id`와 연결된 외래 키                                  |
+| `receiver_id`  | int           | 메시지 수신자 ID. `users` 테이블의 `user_id`와 연결된 외래 키                                    |
+| `sender_id`    | int           | 메시지 발신자 ID. `users` 테이블의 `user_id`와 연결된 외래 키                                   |
+| `content`      | text          | 메시지 내용을 저장                                                                |
+
+---
+
+### **4. 테이블: `chatrooms`**
+
+| **변수명**       | **데이터 타입** | **설명**                                                                                  |
+|-----------------|---------------|--------------------------------------------------------------------------------------|
+| `room_id`      | int           | 채팅방 고유 ID. 기본 키                                                               |
+| `receiver_id`  | int           | 채팅방의 수신자 ID. `users` 테이블의 `user_id`와 연결된 외래 키                                   |
+| `sender_id`    | int           | 채팅방의 발신자 ID. `users` 테이블의 `user_id`와 연결된 외래 키                                   |
+| `product_id`   | int           | 상품 고유 ID. `products` 테이블의 `product_id`와 연결된 외래 키                               |
+
+
 
 
 ---
