@@ -367,7 +367,6 @@ WHERE phone_number NOT REGEXP '^010-[0-9]{4}-[0-9]{4}$';
 
 ### 5번) gmail을 사용하는 유저 이름을 모두 조회하세요.
 **(SELECT, 정규표현식)**
-<br><br>
 <details>
   <summary><b>답안</b></summary>
 
@@ -387,7 +386,6 @@ WHERE email REGEXP '^[a-zA-Z0-9._%+-]+@gmail.com$';
 **2. 특수문자(!@#$%^&*) 반드시 하나이상 포함**<br>
 **3. 비밀번호 길이가 8글자 이상 16글자 이하**<br>
 **(SELECT, 정규표현식)**
-<br><br>
 <details>
   <summary><b>답안</b></summary>
 
@@ -405,7 +403,6 @@ WHERE pwd REGEXP '[A-Z]'
 **(ex. 014-9876-1222 → 010-9929-1693)**<br>
 **참고사항: 019, 014 등 여러개가 존재합니다 한문장으로 바꿔보세요.**<br>
 **(UPDATE, 정규표현식)**
-<br><br>
 <details>
   <summary><b>답안</b></summary>
 
