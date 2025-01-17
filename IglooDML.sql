@@ -1,4 +1,4 @@
-INSERT INTO users (email, pwd, phone_number, name) VALUES
+INSERT INTO user (email, pwd, phone_number, name) VALUES
 ('user1@example.com', 'password1', '010-1234-0001', '김철수'),
 ('user2@example.com', 'password2', '010-1234-0002', '이영희'),
 ('user3@example.com', 'password3', '010-1234-0003', '박민수'),
@@ -24,7 +24,7 @@ INSERT INTO users (email, pwd, phone_number, name) VALUES
 ('user24@gmail.com', 'PasSword24!', '01012340024', '오너우이');
 
 
-INSERT INTO products (owner_id, product_name, price, status, datetime, description) VALUES
+INSERT INTO product (owner_id, product_name, price, status, datetime, description) VALUES
 (1, '중고 자전거', 50000, '판매중', '2025-01-01', '상태 좋습니다.'),
 (2, '노트북', 300000, '판매완료', '2025-01-02', '사양 괜찮습니다.'),
 (3, '책상', 150000, '판매중', '2025-01-03', '튼튼한 책상입니다.'),
@@ -46,7 +46,7 @@ INSERT INTO products (owner_id, product_name, price, status, datetime, descripti
 (19, '자전거 펌프', 15000, '판매중', '2025-01-19', '상태 좋습니다.'),
 (20, '에어프라이어', 80000, '판매완료', '2025-01-20', '상태 양호합니다.');
 
-INSERT INTO messages (room_id, receiver_id, sender_id, content) VALUES
+INSERT INTO message (room_id, receiver_id, sender_id, content) VALUES
 (1, 1, 2, '안녕하세요! 자전거 구매하고 싶은데 가격 조정 가능할까요?'),
 (1, 2, 1, '안녕하세요! 가격은 5만원입니다. 괜찮으신가요?'),
 (2, 2, 1, '노트북 사양 괜찮은가요?'),
@@ -69,7 +69,7 @@ INSERT INTO messages (room_id, receiver_id, sender_id, content) VALUES
 (10, 9, 10, '네, 음질이 매우 좋습니다. 가격은 6만원입니다.');
 
 
-INSERT INTO chatrooms (room_id, receiver_id, sender_id, product_id) VALUES
+INSERT INTO chatroom (room_id, receiver_id, sender_id, product_id) VALUES
 (1, 1, 2, 1),  -- 김철수가 이영희에게 중고 자전거에 대해 대화하는 채팅방
 (2, 2, 1, 2),  -- 이영희가 김철수에게 노트북에 대해 대화하는 채팅방
 (3, 3, 4, 3),  -- 박민수가 최지훈에게 책상에 대해 대화하는 채팅방
