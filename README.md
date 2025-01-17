@@ -400,6 +400,8 @@ WHERE pwd REGEXP '[A-Z]'
 <br>
 
 ### 7번) 전화번호가 010 로 시작하지 않는 사람이 있습니다. 이 사람들의 앞자리 번호를 010으로 시작하도록 수정하세요
+**!!다음 sql문 insert하고 시작해주세요!**<br>
+**INSERT INTO users (email, pwd, phone_number, name) VALUES ('user22@example.com', 'password22', '019-1234-0021', '김삿갓')**<br>
 **(ex. 014-9876-1222 → 010-9876-1222)**<br>
 **참고사항: 019, 014 등 여러개가 존재합니다 한문장으로 바꿔보세요.**<br>
 **(UPDATE, 정규표현식)**
