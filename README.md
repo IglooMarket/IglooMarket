@@ -11,7 +11,7 @@
 ---
 ## 🐿️ 프로젝트 소개
 - RDBMS를 활용한 정규표현식 SQL문장을 학습하는것이 목표인 프로젝트입니다!
-- 이글루마켓은 네고에 지친 사람들을 위한 중고거래 플랫폼입니다!
+- 이글루마켓은 네고에 지친 사람들을 위한 cool❄️한 중고거래 플랫폼입니다!
 - 다음 사이트를 운영하기 위한 SQL문장을 작성해보세요!
 
 ---
@@ -64,7 +64,7 @@
 ## 🌐 DB 네트워크 구축
 - 하나의 데이터베이스에서 다수의 사용자가 데이터 관리가 가능한 환경을 구축
 
-- mysql 설정
+> ## mysql 설정
 
 1. mysql의 bind-address 설정 
     
@@ -117,7 +117,10 @@ GRANT ALL PRIVILEGES ON igloo.* TO 'kcgy04'@'%';
 flush privileges;
 ```
 
-- DB 환경 구축
+
+
+> ## DB 환경 구축
+  다음은 DB환경 구축을 위한 설정 단계입니다.
 <details>
 <summary> 1. 호스트PC 모바일 핫스팟 설정하기 </summary>
 
@@ -278,7 +281,7 @@ CMD(커맨드 창) → `ipconfig` → 무선 LAN 어댑터 로컬 영역 연결*
 ---
 
 ## ⁉️ 정규표현식 SQL문 문제
-### 1번) 가격이 특정 가격인 상품을 찾아서 가격 인상 또는 인하하세요. **(UPDATE, 정규표현식)**
+> ### 1번) 가격이 특정 가격인 상품을 찾아서 가격 인상 또는 인하하세요. **(UPDATE, 정규표현식)**
 **ex) 5만원인 상품을 7만원으로 가격 인상**
 
 
@@ -296,7 +299,7 @@ SET price
 
 ![image](https://github.com/user-attachments/assets/5b6be427-e5aa-47b5-8d69-4d675f959d4e)
 <details>
-  <summary><b>답안</b></summary>
+  <summary><b>:key:답안</b></summary>
  
 ```sql
 UPDATE products
@@ -306,7 +309,9 @@ WHERE price REGEXP '^50000$';
 </details>
 <br>
 
-### 2번) 쿨하지 못한 '네고'라는 말을 사용하는 유저가 있는 채팅방 아이디를 찾으세요. **(SELECT, 정규표현식)**
+---
+
+> ### 2번) 쿨하지 못한 '네고'라는 말을 사용하는 유저가 있는 채팅방 아이디를 찾으세요. **(SELECT, 정규표현식)**
 ```
 SELECT room_id
 FROM messages
@@ -317,7 +322,7 @@ FROM messages
 
 
 <details>
-  <summary><b>답안</b></summary>
+  <summary><b>:key:답안</b></summary>
  
 ```sql
 SELECT room_id FROM messages 
@@ -326,7 +331,9 @@ WHERE content REGEXP '네고';
 </details>
 <br>
 
-### 3번) '네고' 라는 단어를 필터링해 '쿨거래'로 변경하세요. **(UPDATE, 정규표현식)**
+---
+
+> ### 3번) '네고' 라는 단어를 필터링해 '쿨거래'로 변경하세요. **(UPDATE, 정규표현식)**
 **저희는 채팅 메시지에 네고라는 단어를 쓰면 후에 필터링을 통해 쿨거래로 바꿔드립니다.**<br>
 
 <br><br>
@@ -339,7 +346,7 @@ FROM messages
 ![image](https://github.com/user-attachments/assets/bbf918a3-e5fd-4322-981c-a18707cfe857)
 
 <details>
-  <summary><b>답안</b></summary>
+  <summary><b>:key:답안</b></summary>
 
 ```sql
 SELECT content
@@ -359,7 +366,7 @@ SET content
 
 
 <details>
-  <summary><b>답안</b></summary>
+  <summary><b>:key:답안</b></summary>
  
 ```sql
 UPDATE messages
@@ -377,7 +384,7 @@ FROM messages
 
 
 <details>
-  <summary><b>답안</b></summary>
+  <summary><b>:key:답안</b></summary>
 
 ```sql
 SELECT content
@@ -387,7 +394,9 @@ WHERE content REGEXP '네고';
 </details>
 <br>
 
-### 4번. 형식을 지키지 않은 전화번호를 형식에 맞게 변경하세요. **(UPDATE, 정규표현식)**
+---
+
+> ### 4번. 형식을 지키지 않은 전화번호를 형식에 맞게 변경하세요. **(UPDATE, 정규표현식)**
 **[-]가 없이 이어서 작성한 전화번호를 정해진 전화번호 형식으로 변경하세요.**<br>
 **전화번호 형식: 010-0000-0000**<br>
 
@@ -401,7 +410,7 @@ FROM users
 
 
 <details>
-  <summary><b>답안</b></summary>
+  <summary><b>:key:답안</b></summary>
 
 ```sql
 SELECT *
@@ -421,7 +430,7 @@ SET phone_number
 
 
 <details>
-  <summary><b>답안</b></summary>
+  <summary><b>:key:답안</b></summary>
 
 ```sql
 UPDATE users
@@ -439,7 +448,7 @@ FROM users
 ![image](https://github.com/user-attachments/assets/50a43f6e-2750-4954-a3a3-86f36509f51f)
 
 <details>
-  <summary><b>답안</b></summary>
+  <summary><b>:key:답안</b></summary>
 
 ```sql
 SELECT *
@@ -449,7 +458,9 @@ WHERE phone_number NOT REGEXP '^010-[0-9]{4}-[0-9]{4}$';
 </details>
 <br>
 
-### 5번. email에서 gmail을 사용하는 유저 이름을 모두 조회하세요. **(SELECT, 정규표현식)**
+---
+
+> ### 5번. email에서 gmail을 사용하는 유저 이름을 모두 조회하세요. **(SELECT, 정규표현식)**
 
 ```
 SELECT *
@@ -459,7 +470,7 @@ FROM users
 ![image](https://github.com/user-attachments/assets/0e7af5de-24c7-4612-ad94-25cc57fa2a83)
 
 <details>
-  <summary><b>답안</b></summary>
+  <summary><b>:key:답안</b></summary>
 
 ```sql
 SELECT *
@@ -469,7 +480,9 @@ WHERE email REGEXP '^[a-zA-Z0-9._%+-]+@gmail.com$';
 </details>
 <br>
 
-### 6번. 변경된 비밀번호 정책을 만족하는 비밀번호를 가진 유저를 모두 조회하세요. **(SELECT, 정규표현식)**
+---
+
+> ### 6번. 변경된 비밀번호 정책을 만족하는 비밀번호를 가진 유저를 모두 조회하세요. **(SELECT, 정규표현식)**
 **변경된 비밀번호 정책을 만족하는 비밀번호를 가진 유저를 모두 조회하려고 합니다.**<br>
 **비밀번호를 정해진 형식에 맞게 필터링해서 조회하세요.**<br>
 **[비밀번호 형식]**<br>
@@ -485,7 +498,7 @@ FROM users
 ![image](https://github.com/user-attachments/assets/fd59da65-ebd5-41fb-98a2-43b947ad1084)
 
 <details>
-  <summary><b>답안</b></summary>
+  <summary><b>:key:답안</b></summary>
 
 ```sql
 SELECT *
@@ -497,7 +510,9 @@ WHERE pwd REGEXP '[A-Z]'
 </details>
 <br>
 
-### 7번. 전화번호가 010 로 시작하지 않는 사람이 있습니다. 이 사람들의 앞자리 번호를 010으로 시작하도록 수정하세요 **(UPDATE, 정규표현식)**
+---
+
+> ### 7번. 전화번호가 010 로 시작하지 않는 사람이 있습니다. 이 사람들의 앞자리 번호를 010으로 시작하도록 수정하세요 **(UPDATE, 정규표현식)**
 **!!다음 sql문 insert하고 시작해주세요!**</br>
 **INSERT INTO users (email, pwd, phone_number, name) VALUES ('user25@example.com', 'password25', '019-1234-0021', '오일남')**</br>
 **(ex. 014-9876-1222 → 010-9876-1222)**</br>
@@ -519,7 +534,7 @@ SET phone_number
 
 
 <details>
-  <summary><b>답안</b></summary>
+  <summary><b>:key:답안</b></summary>
 
 ```sql
 UPDATE users
@@ -534,18 +549,18 @@ WHERE phone_number not REGEXP '^010';
 
 ## 💡 트러블 슈팅
 
-### 문제 상황
+- ### 문제 상황
 
 **모바일 핫스팟을 키지 않은 상태에서 Virtual Box에 올라간 Ubuntu 서버를 가동할 시에 우분투 서버가 실행되지 않는 문제가 발생**
 
 ![Image](https://github.com/user-attachments/assets/75cc0d5d-307c-47fa-a823-54819a4a97f6)
 <br><br>
 
-### 문제 원인 
+- ### 문제 원인 
 **호스트 IP(192.168.137.1) 과 게스트 IP(10.0.2.15) 사이 3306 포트로 포트포워딩을 구성하였기 떄문에 발생하는 문제. 만약 모바일 핫스팟을 켜지 않았다면 192.168.137.1에 대한 IP주소가 아직 할당되지 않은 상태이기 떄문에 발생**
 ![Image](https://github.com/user-attachments/assets/cd9ecc9a-2cb0-4f69-8459-b023d3acef8d)
 
-### 해결법 
+- ### 해결법 
 **모바일 핫스팟을 먼저 킨 후에 우분투 서버 실행**
 
 
