@@ -21,7 +21,7 @@ INSERT INTO users (email, pwd, phone_number, name) VALUES
 ('user20@example.com', 'password20', '010-1234-0020', '오민재'),
 ('user22@example.com', 'password22', '010-1234-0021', '김삿갓'),
 ('user23@gmail.com', 'password23', '01012340023', '오예스'),
-('user24@gmail.com', 'password24', '01012340024', '오너우이');
+('user24@gmail.com', 'PasSword24!', '01012340024', '오너우이');
 
 
 INSERT INTO products (owner_id, product_name, price, status, datetime, description) VALUES
