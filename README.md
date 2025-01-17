@@ -281,13 +281,13 @@ CMD(커맨드 창) → `ipconfig` → 무선 LAN 어댑터 로컬 영역 연결*
 ---
 
 ## ⁉️ 정규표현식 SQL문 문제
-> ### 1번) 가격이 특정 가격인 상품을 찾아서 가격 인상 또는 인하하세요. **(UPDATE, 정규표현식)**
+> ### 1번. 가격이 특정 가격인 상품을 찾아서 가격 인상 또는 인하하세요. **(UPDATE, 정규표현식)**
 **ex) 5만원인 상품을 7만원으로 가격 인상**
 
 
 
 ```
-UPDATE products
+UPDATE product
 SET price
 ```
 
@@ -302,7 +302,7 @@ SET price
   <summary><b>:key:답안</b></summary>
  
 ```sql
-UPDATE products
+UPDATE product
 SET price = REGEXP_REPLACE(price, '50000', '70000')
 WHERE price REGEXP '^50000$';
 ```
@@ -311,10 +311,10 @@ WHERE price REGEXP '^50000$';
 
 ---
 
-> ### 2번) 쿨하지 못한 '네고'라는 말을 사용하는 유저가 있는 채팅방 아이디를 찾으세요. **(SELECT, 정규표현식)**
+> ### 2번. 쿨하지 못한 '네고'라는 말을 사용하는 유저가 있는 채팅방 아이디를 찾으세요. **(SELECT, 정규표현식)**
 ```
 SELECT room_id
-FROM messages
+FROM message
 ```
 
 ![image](https://github.com/user-attachments/assets/cb875e82-5e42-4572-9f19-428cc6dd1356)
@@ -325,7 +325,7 @@ FROM messages
   <summary><b>:key:답안</b></summary>
  
 ```sql
-SELECT room_id FROM messages 
+SELECT room_id FROM message
 WHERE content REGEXP '네고';
 ```
 </details>
@@ -333,14 +333,14 @@ WHERE content REGEXP '네고';
 
 ---
 
-> ### 3번) '네고' 라는 단어를 필터링해 '쿨거래'로 변경하세요. **(UPDATE, 정규표현식)**
+> ### 3번. '네고' 라는 단어를 필터링해 '쿨거래'로 변경하세요. **(UPDATE, 정규표현식)**
 **저희는 채팅 메시지에 네고라는 단어를 쓰면 후에 필터링을 통해 쿨거래로 바꿔드립니다.**<br>
 
 <br><br>
 **3-1. '네고'라는 단어를 포함한 메시지 내용 출력하세요.**
 ```
 SELECT content
-FROM messages
+FROM message
 ```
 
 ![image](https://github.com/user-attachments/assets/bbf918a3-e5fd-4322-981c-a18707cfe857)
@@ -350,14 +350,14 @@ FROM messages
 
 ```sql
 SELECT content
-FROM messages
+FROM message
 WHERE content REGEXP '네고';
 ```
 </details>
 
 **3-2. 정규 표현식을 이용해 '네고'라는 단어를 '쿨거래'로 바꿔서 업데이트 하세요.**
 ```
-UPDATE messages
+UPDATE message
 SET content
 ```
 수정 후 )
@@ -369,7 +369,7 @@ SET content
   <summary><b>:key:답안</b></summary>
  
 ```sql
-UPDATE messages
+UPDATE message
 SET content = REGEXP_REPLACE(content, '네고', '쿨거래')
 WHERE content REGEXP '네고';
 ```
@@ -378,7 +378,7 @@ WHERE content REGEXP '네고';
 **3-3. '네고'라는 단어를 포함한 메시지 내용이 남아 있는지 출력하세요.**
 ```
 SELECT content
-FROM messages
+FROM message
 ```
 ![image](https://github.com/user-attachments/assets/d3ab6a67-901e-488b-ae48-e2634e102a12)
 
@@ -388,7 +388,7 @@ FROM messages
 
 ```sql
 SELECT content
-FROM messages
+FROM message
 WHERE content REGEXP '네고';
 ```
 </details>
@@ -404,7 +404,7 @@ WHERE content REGEXP '네고';
 **4-1. 정해진 형식이 아닌 전화번호를 가진 유저 정보를 모두 출력하세요.**
 ```
 SELECT *
-FROM users
+FROM user
 ```
 ![image](https://github.com/user-attachments/assets/18c38bf5-150e-48cc-8e51-6fc2ab269252)
 
@@ -414,14 +414,14 @@ FROM users
 
 ```sql
 SELECT *
-FROM users
+FROM user
 WHERE phone_number NOT REGEXP '^010-[0-9]{4}-[0-9]{4}$';
 ```
 </details>
 
 **4-2. 정규 표현식을 이용해 -가 없이 이어서 작성한 전화번호를 정해진 형식으로 바꿔서 업데이트 하세요.**
 ```
-UPDATE users
+UPDATE user
 SET phone_number
 ```
 수정 후 )
@@ -433,7 +433,7 @@ SET phone_number
   <summary><b>:key:답안</b></summary>
 
 ```sql
-UPDATE users
+UPDATE user
 SET phone_number = CONCAT(SUBSTRING(phone_number, 1, 3), '-', SUBSTRING(phone_number, 4, 4), '-', SUBSTRING(phone_number, 8, 4))
 WHERE phone_number REGEXP '^010[0-9]{8}$';
 ```
@@ -442,7 +442,7 @@ WHERE phone_number REGEXP '^010[0-9]{8}$';
 **4-3. 정해진 형식이 아닌 전화번호를 가진 유저 정보가 남아있는지 출력해 확인하세요.**
 ```
 SELECT *
-FROM users
+FROM user
 ```
 
 ![image](https://github.com/user-attachments/assets/50a43f6e-2750-4954-a3a3-86f36509f51f)
@@ -452,7 +452,7 @@ FROM users
 
 ```sql
 SELECT *
-FROM users
+FROM user
 WHERE phone_number NOT REGEXP '^010-[0-9]{4}-[0-9]{4}$';
 ```
 </details>
@@ -464,7 +464,7 @@ WHERE phone_number NOT REGEXP '^010-[0-9]{4}-[0-9]{4}$';
 
 ```
 SELECT *
-FROM users
+FROM user
 ```
 
 ![image](https://github.com/user-attachments/assets/0e7af5de-24c7-4612-ad94-25cc57fa2a83)
@@ -474,7 +474,7 @@ FROM users
 
 ```sql
 SELECT *
-FROM users
+FROM user
 WHERE email REGEXP '^[a-zA-Z0-9._%+-]+@gmail.com$';
 ```
 </details>
@@ -492,7 +492,7 @@ WHERE email REGEXP '^[a-zA-Z0-9._%+-]+@gmail.com$';
 
 ```
 SELECT *
-FROM users
+FROM user
 ```
 
 ![image](https://github.com/user-attachments/assets/fd59da65-ebd5-41fb-98a2-43b947ad1084)
@@ -502,7 +502,7 @@ FROM users
 
 ```sql
 SELECT *
-FROM users
+FROM user
 WHERE pwd REGEXP '[A-Z]'                
   AND pwd REGEXP '[!@#$%^&*]'           
   AND LENGTH(pwd) BETWEEN 8 AND 16;
@@ -519,7 +519,7 @@ WHERE pwd REGEXP '[A-Z]'
 **참고사항: 019, 014 등 여러개가 존재하는 가정상황입니다.  한문장으로 바꿔보세요.**</br>
 
 ```
-UPDATE users
+UPDATE user
 SET phone_number
 ```
 
@@ -537,7 +537,7 @@ SET phone_number
   <summary><b>:key:답안</b></summary>
 
 ```sql
-UPDATE users
+UPDATE user
 SET phone_number = REGEXP_REPLACE(phone_number, substr(phone_number, 1,3), '010')
 WHERE phone_number not REGEXP '^010';
 ```
