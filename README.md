@@ -1,13 +1,13 @@
 # ❄️ 이글루마켓
   
 ## 목차  
-1. [프로젝트 소개](##프로젝트-소개)  
-2. [사용된 기술 스택](##기술-stack)
-3. [DB 네트워크 구축](##DB-네트워크-구축)  
-4. [SQL 문제](##팀원-소개)
-5. [트러블 슈팅](##트러블슈팅)
-6. [느낀점](##느낀점)  
-
+1. [프로젝트 소개](#%EF%B8%8F-프로젝트-소개)  
+2. [사용된 기술 스택](#-기술-stack)
+3. [DB 네트워크 구축](#-db-네트워크-구축)
+4. [DB 설계](#%EF%B8%8F-데이터설계)
+5. [SQL 문제](#%EF%B8%8F-정규표현식-sql문-문제)
+6. [트러블 슈팅](#-트러블-슈팅)
+7. [느낀점](#-느낀점)
 ---
 ## 🐿️ 프로젝트 소개
 - RDBMS를 활용한 정규표현식 SQL문장 개발
@@ -281,10 +281,20 @@ CMD(커맨드 창) → `ipconfig` → 무선 LAN 어댑터 로컬 영역 연결*
 ### 1번) 가격이 특정 가격인 상품을 찾아서 가격 인상 또는 인하하세요. **(UPDATE, 정규표현식)**
 **ex) 5만원인 상품을 7만원으로 가격 인상**
 
+
+
 ```
 UPDATE products
 SET price
 ```
+
+수정 전)
+
+![image](https://github.com/user-attachments/assets/374404b1-75a4-478e-8385-a772463a7c9f)
+
+수정 후)
+
+![image](https://github.com/user-attachments/assets/5b6be427-e5aa-47b5-8d69-4d675f959d4e)
 <details>
   <summary><b>답안</b></summary>
  
@@ -301,6 +311,11 @@ WHERE price REGEXP '^50000$';
 SELECT room_id
 FROM messages
 ```
+
+![image](https://github.com/user-attachments/assets/cb875e82-5e42-4572-9f19-428cc6dd1356)
+
+
+
 <details>
   <summary><b>답안</b></summary>
  
@@ -320,6 +335,9 @@ WHERE content REGEXP '네고';
 SELECT content
 FROM messages
 ```
+
+![image](https://github.com/user-attachments/assets/bbf918a3-e5fd-4322-981c-a18707cfe857)
+
 <details>
   <summary><b>답안</b></summary>
 
@@ -335,6 +353,11 @@ WHERE content REGEXP '네고';
 UPDATE messages
 SET content
 ```
+수정 후 )
+
+![image](https://github.com/user-attachments/assets/9137eccd-1475-444e-9f58-e25ce798470c)
+
+
 <details>
   <summary><b>답안</b></summary>
  
@@ -350,6 +373,9 @@ WHERE content REGEXP '네고';
 SELECT content
 FROM messages
 ```
+![image](https://github.com/user-attachments/assets/d3ab6a67-901e-488b-ae48-e2634e102a12)
+
+
 <details>
   <summary><b>답안</b></summary>
 
@@ -371,6 +397,9 @@ WHERE content REGEXP '네고';
 SELECT *
 FROM users
 ```
+![image](https://github.com/user-attachments/assets/18c38bf5-150e-48cc-8e51-6fc2ab269252)
+
+
 <details>
   <summary><b>답안</b></summary>
 
@@ -386,6 +415,11 @@ WHERE phone_number NOT REGEXP '^010-[0-9]{4}-[0-9]{4}$';
 UPDATE users
 SET phone_number
 ```
+수정 후 )
+
+![image](https://github.com/user-attachments/assets/c2034a6e-0d47-44eb-95c7-9f142b1ba97a)
+
+
 <details>
   <summary><b>답안</b></summary>
 
@@ -401,6 +435,9 @@ WHERE phone_number REGEXP '^010[0-9]{8}$';
 SELECT *
 FROM users
 ```
+
+![image](https://github.com/user-attachments/assets/50a43f6e-2750-4954-a3a3-86f36509f51f)
+
 <details>
   <summary><b>답안</b></summary>
 
@@ -418,6 +455,9 @@ WHERE phone_number NOT REGEXP '^010-[0-9]{4}-[0-9]{4}$';
 SELECT *
 FROM users
 ```
+
+![image](https://github.com/user-attachments/assets/0e7af5de-24c7-4612-ad94-25cc57fa2a83)
+
 <details>
   <summary><b>답안</b></summary>
 
@@ -441,6 +481,9 @@ WHERE email REGEXP '^[a-zA-Z0-9._%+-]+@gmail.com$';
 SELECT *
 FROM users
 ```
+
+![image](https://github.com/user-attachments/assets/fd59da65-ebd5-41fb-98a2-43b947ad1084)
+
 <details>
   <summary><b>답안</b></summary>
 
@@ -456,14 +499,25 @@ WHERE pwd REGEXP '[A-Z]'
 
 ### 7번. 전화번호가 010 로 시작하지 않는 사람이 있습니다. 이 사람들의 앞자리 번호를 010으로 시작하도록 수정하세요 **(UPDATE, 정규표현식)**
 **!!다음 sql문 insert하고 시작해주세요!**</br>
-**INSERT INTO users (email, pwd, phone_number, name) VALUES ('user22@example.com', 'password22', '019-1234-0021', '김삿갓')**</br>
+**INSERT INTO users (email, pwd, phone_number, name) VALUES ('user25@example.com', 'password25', '019-1234-0021', '오일남')**</br>
 **(ex. 014-9876-1222 → 010-9876-1222)**</br>
-**참고사항: 019, 014 등 여러개가 존재합니다 한문장으로 바꿔보세요.**</br>
+**참고사항: 019, 014 등 여러개가 존재하는 가정상황입니다.  한문장으로 바꿔보세요.**</br>
 
 ```
 UPDATE users
 SET phone_number
 ```
+
+수정 전 ) 
+
+![image](https://github.com/user-attachments/assets/39c386f6-70aa-4f41-b0f6-c18271c2e0f0)
+
+
+수정 후 )
+
+![image](https://github.com/user-attachments/assets/6fdc6c2f-bcd9-4702-958e-607768a09d7e)
+
+
 <details>
   <summary><b>답안</b></summary>
 
@@ -483,6 +537,7 @@ WHERE phone_number not REGEXP '^010';
 ### 문제 상황
 
 **모바일 핫스팟을 키지 않은 상태에서 Virtual Box에 올라간 Ubuntu 서버를 가동할 시에 우분투 서버가 실행되지 않는 문제가 발생**
+
 ![Image](https://github.com/user-attachments/assets/75cc0d5d-307c-47fa-a823-54819a4a97f6)
 <br><br>
 
