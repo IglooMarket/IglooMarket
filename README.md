@@ -223,7 +223,7 @@ CMD(커맨드 창) → `ipconfig` → 무선 LAN 어댑터 로컬 영역 연결*
 ## ⚙️ 데이터설계
 
 ### ERD
-<img width="553" alt="Image" src="https://github.com/user-attachments/assets/5d0791ec-0e2c-4e86-b0b0-93c169669e11" />
+<img width="553" alt="Image" src="https://github.com/user-attachments/assets/574c39b0-e454-4e17-9766-fe4d8ae6ce61" />
 
 ---
 
